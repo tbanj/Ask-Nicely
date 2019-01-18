@@ -1,0 +1,22 @@
+<div class="container-scroller">
+  <app-navbar *ngIf="nav.visible"></app-navbar>
+  <div class="container-fluid page-body-wrapper">
+    <app-sidebar *ngIf="sidebar.sideVisible"></app-sidebar>
+    <div 
+        
+       [ngClass]="panelback.visiblePanel ? 'main-panel' : ''"
+       >
+
+        <!-- this is use to remove the css class content-wrapper
+        (click)="clickEvent()"  
+      [ngClass]="statusback ? 'content-wrapper' : ''" 
+        below -->
+      <div  
+        
+      [ngClass]="panelback.visibleBack ? 'content-wrapper' : ''">
+        <router-outlet></router-outlet>
+      </div>
+      <app-footer *ngIf="footerser.footerVisible"></app-footer>
+    </div>
+  </div>
+</div>
